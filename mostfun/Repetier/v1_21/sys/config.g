@@ -23,12 +23,13 @@ M574 X1 Y1 Z2 S0					; set endstop configuration (Microswitches, X and Y Low End
 
 M667 S1								; set CoreXY mode
 
-M350 X16 Y16 E16 I1 ; Configure microstepping with interpolation 
+M350 X16 Y16 I1 ; Configure microstepping with interpolation (16 -> 256interpolated)
+M350 E16				;
 
 M92 X80 Y80 Z400					; Set axis steps/mm
 M92 E96,96									; Set extruder steps/mm
 
-M906 X800 Y800 Z800 E800            ; Set motor currents (mA)
+M906 X800 Y800 Z1200 E800            ; Set motor currents (mA)
 M201 X800 Y800 Z150 E1000            ; Accelerations (mm/s^2)
 M203 X15000 Y15000 Z1000 E3600       ; Maximum speeds (mm/min)
 M566 X600 Y600 Z30 E20              ; Maximum jerk speeds mm/minute
